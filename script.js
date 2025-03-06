@@ -1,5 +1,5 @@
 
-document.getElementById("votingForm").addEventListener("submit", function(event) {
+document.getElementById("form").addEventListener("submit", function(event) {
     event.preventDefault(); 
 
     let userName = document.getElementById("name").value.trim();
@@ -16,9 +16,9 @@ document.getElementById("votingForm").addEventListener("submit", function(event)
     let checkAge = new Promise((resolve, reject) => {
         setTimeout(() => {
             if (userAge > 18) {
-                resolve(`Welcome, ${userName}. You can vote.`);
+                resolve(`Welcome, ${name}. You can vote.`);
             } else {
-                reject(`Oh sorry ${userName}. You aren't old enough.`);
+                reject(`Oh sorry ${name}. You aren't old enough.`);
             }
         }, 4000); 
     });
