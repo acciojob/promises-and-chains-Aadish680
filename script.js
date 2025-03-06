@@ -1,5 +1,5 @@
 
-document.getElementById("form").addEventListener("submit", function(event) {
+document.getElementById("votingForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
 
     let userName = document.getElementById("name").value.trim();
@@ -16,15 +16,15 @@ document.getElementById("form").addEventListener("submit", function(event) {
     let checkAge = new Promise((resolve, reject) => {
         setTimeout(() => {
             if (userAge > 18) {
-                resolve(`Welcome, ${name}. You can vote.`);
+                resolve(`Welcome, ${userName}. You can vote.`);
             } else {
-                reject(`Oh sorry ${name}. You aren't old enough.`);
+                reject(`Oh sorry ${userName}. You aren't old enough.`);
             }
         }, 4000); 
     });
 
-   
+    // 3️⃣ Handle Promise Resolution/Rejection
     checkAge
-        .then(message => alert(message)) 
+        .then(message => alert(message)) // Show success message
         .catch(error => alert(error));   
 });
